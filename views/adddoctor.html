@@ -1,0 +1,130 @@
+<html>
+
+<head>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-image: url(main.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        a:link,
+        a:visited {
+            background-color: rgb(39, 48, 117);
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover,
+        a:active {
+            background-color: rgb(117, 127, 190);
+        }
+
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Add padding to containers */
+        .container {
+            padding: 16px;
+            background-color: white;
+        }
+
+        /* Full-width input fields */
+        input[type=text],
+        input[type=number],
+        input[type=date] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus,
+        input[type=number]:focus,
+        input[type=date]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Overwrite default styles of hr */
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        /* Set a style for the submit button */
+        .registerbtn {
+            background-color: rgb(96, 107, 184);
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <h3>
+        <a href="/">Home</a>
+        <a href="/addpatient">Add patient</a>
+        <a href="/getpatients">List patients</a>
+        <a href="/getdoctor">List doctors</a>
+        <a href="/updatedoctor">Update doctor</a>
+        <a href="/deletepatient">Delete patient</a>
+
+    </h3>
+    <form action="/adddoctor" method="post">
+        <div class="container">
+            <h1>Add New doctor</h1>
+            <p>Please fill in this form to add a new doctor.</p>
+            <hr>
+            First Name<input type="text" name="firstname" id="firstname" required> <br>
+            Last Name<input type="text" name="lastname" id="lastname"> <br>
+            Date of Birth<input type="date" name="dob" id="dob"> <br>
+            State<input type="text" name="state" id="state"> <br>
+            Suburb<input type="text" name="suburb" id="suburb"> <br>
+            Street<input type="text" name="street" id="street"> <br>
+            Unit<input type="text" name="unit" id="unit"> <br>
+            Number of Patients<input type="number" name="nop" id="nop"> <br>
+
+            <hr>
+
+
+            <button type="submit" class="registerbtn">add doctor </button>
+
+
+    </form>
+
+
+
+</body>
+
+
+</html>

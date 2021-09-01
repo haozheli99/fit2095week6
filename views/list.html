@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        a:link,
+        a:visited {
+            background-color: rgb(39, 48, 117);
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover,
+        a:active {
+            background-color: rgb(117, 127, 190);
+        }
+
+        #patients {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        body {
+            background-image: url("main.jpg");
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #patients td,
+        #patients th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+
+        #patients tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #patients tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        #patients tr:hover {
+            background-color: #ddd;
+        }
+
+        #patients th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: rgb(78, 90, 181);
+            color: white;
+        }
+    </style>
+</head>
+<!-- padding is the size of table -->
+<!--padding  top and bot resize the cell size, text align refers position of text, color refers word color, background is cell BG-->
+
+
+<body>
+    <h3>
+        <a href="/">Home</a>
+        <a href="/addpatient">Add patient</a>
+        <a href="/adddoctor">Add doctor</a>
+        <a href="/getdoctor">List doctors</a>
+        <a href="/updatedoctor">Update doctor</a>
+        <a href="/deletepatient">Delete patient</a>
+
+    </h3>
+    <h1 style="color :  rgb(255, 255, 255)">List of patients</h1>
+    <table id="patients">
+        <tr>
+            <th>#</th>
+            <th>fullname</th>
+            <th>doctor</th>
+            <th>age </th>
+            <th>dov</th>
+            <th>caseDes</th>
+        </tr>
+
+        <% for(let i=0; i< data.length;i++) { %>
+            <tr>
+                <td>
+                    <%= i+1 %>
+                </td>
+                <td>
+                    <%= data[i].fullname %>
+                </td>
+                <td>
+                    <%= data[i].doctor.name.firstName + ' ' + data[i].doctor.name.lastName %>
+                </td>
+                <td>
+                    <%= data[i].age %>
+                </td>
+                <td>
+                    <%= data[i].dov %>
+                </td>
+                <td>
+                    <%= data[i].caseDes %>
+                </td>
+
+            </tr>
+            <% } %>
+
+    </table>
+</body>
+
+</html>
